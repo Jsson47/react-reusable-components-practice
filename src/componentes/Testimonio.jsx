@@ -5,11 +5,13 @@ function Testimonio(props) {
   return (
     <div className='contenedor-testimonio'>
       <img className='imagen-testimonio'
-      src={require('../imagenes/testimonio-emma.webp')}
-      alt="Foto de Emma"/>
+      src={require(`../imagenes/testimonio-${props.imagen}.webp`)}   
+      alt="Foto de Emma" />
       <div className='contenedor-texto-testimonio'>
-        <p className='nombre-testimonio'>{props.nombre} in {props.pais}</p>
-        <p className='cargo-testimonio'>{props.cargo} at {props.empresa}</p>
+        <p className='nombre-testimonio'>
+          <strong>{props.nombre}</strong> in {props.pais}</p>
+        <p className='cargo-testimonio'>
+          {props.cargo} at <strong>{props.empresa}</strong></p>
         <p className='texto-testimonio'>"{props.testimonio}"</p>
       </div>
     </div>
@@ -17,3 +19,4 @@ function Testimonio(props) {
 }
 
 export default Testimonio;
+
